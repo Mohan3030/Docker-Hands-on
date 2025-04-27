@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhilClub of Music</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling with background image */
+        body {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #f0f0f0;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        header h2 {
+            font-size: 1.8em;
+            color: #d0d0d0;
+            font-weight: 300;
+            font-style: italic;
+        }
+    
+        /* Navigation styling (sticky) */
+        nav {
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-image: round;
+            border-color: #f0f0f0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background 0.3s, color 0.3s, transform 0.2s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:focus {
+            background: #00d4ff;
+            color: #1a1a2e;
+            transform: scale(1.05);
+        }
+
+        /* Main content styling */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            gap: 40px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        section h2 {
+            font-size: 2.2em;
+            color: #00d4ff;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #00d4ff;
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* Song article styling (card-like with animation) */
+        article {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 0.5s ease-in-out;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        article:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        article h3 {
+            font-size: 1.8em;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        article p {
+            margin-bottom: 12px;
+            font-size: 1em;
+        }
+
+        article p strong {
+            color: #00d4ff;
+            font-weight: 500;
+        }
+
+        article a {
+            display: inline-block;
+            color: #1a1a2e;
+            background: #00d4ff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        article a:hover,
+        article a:focus {
+            background: #00b7eb;
+            transform: scale(1.05);
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 50px;
+            font-size: 1.4em;
+            color: #955134;
+            font-style:italic;
+            font-family:Arial, Helvetica, sans-serif
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            header h2 {
+                font-size: 1.4em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                padding: 10px 0;
+            }
+
+            nav ul li a {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+
+            section h2 {
+                font-size: 1.8em;
+            }
+
+            article {
+                padding: 20px;
+            }
+
+            article h3 {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            header {
+                padding: 30px 15px;
+            }
+
+            main {
+                gap: 30px;
+            }
+
+            footer {
+                padding: 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Portfolio of My Favorite Songs</h1>
+        <h2>Welcome to the AudioPhilClub</h2>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#lofi-mood" aria-label="View Lofi-Mood songs">Lofi-Mood</a></li>
+                <li><a href="#mass-mood" aria-label="View Mass-Mood songs">Mass-Mood</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="lofi-mood">
+            <h2>Lofi-Mood Songs</h2>
+            <article>
+                <h3>Neeve Neeve</h3>
+                <p><strong>Artist:</strong> Pradeep Kumar</p>
+                <p><strong>Genre:</strong> Sentiment</p>
+                <p><a href="https://youtu.be/7hrs7jqIPZM?si=_J06FMTeAoSriUTH" target="_blank">Listen on YouTube</a></p>
+            </article>
+        </section>
+        <section id="mass-mood">
+            <h2>Mass-Mood Songs</h2>
+            <article>
+                <h3>The One</h3>
+                <p><strong>Artist:</strong> SANA, SVDP & Sid Sriram</p>
+                <p><strong>Genre:</strong> Rap & Mass</p>
+                <p><a href="https://youtu.be/y1TsOIB96e8?si=PN2nk1kdeWSfZtRN" target="_blank">Listen on YouTube</a></p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Leave the world behind with Music</p>
+    </footer>
+</body>
+</html>
